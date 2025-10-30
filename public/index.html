@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Mini Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Library Management System Dashboard</h1>
+    </header>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button active" data-tab="tab-list">Book List</button>
+            <button class="tab-button" data-tab="tab-book">Add Book</button>
+            <button class="tab-button" data-tab="tab-member">Add Member</button>
+            <button class="tab-button" data-tab="tab-branch">Add Branch</button>
+            <button class="tab-button" data-tab="tab-librarian">Add Librarian</button>
+            <button class="tab-button" data-tab="tab-author">Add Author</button>
+        </div>
+
+        <section id="tab-list" class="tab-content active">
+            <h2>Available Books (Database View)</h2>
+            <ul id="books-list">
+                <li>Loading books...</li> 
+            </ul>
+        </section>
+
+        <section id="tab-book" class="tab-content">
+            <h2>Add New Book</h2>
+            <form id="add-book-form">
+                <div class="form-group"><label>Title:</label><input type="text" name="Title" required></div>
+                <div class="form-group"><label>ISBN (Unique):</label><input type="text" name="ISBN" required></div>
+                <div class="form-group"><label>Publisher:</label><input type="text" name="Publisher"></div>
+                <div class="form-group"><label>Year of Publication:</label><input type="number" name="Year_of_publication" min="1000" max="2099"></div>
+                <div class="form-group"><label>Edition:</label><input type="text" name="Edition"></div>
+                <div class="form-group"><label>Branch ID (Required):</label><input type="number" name="Branch_ID" required></div>
+                <button type="submit">Add Book</button>
+                <div class="status-message" id="book-status-message"></div>
+            </form>
+        </section>
+
+        <section id="tab-member" class="tab-content">
+            <h2>Add New Member</h2>
+            <form id="add-member-form">
+                <div class="form-group"><label>Name:</label><input type="text" name="Name" required></div>
+                <div class="form-group"><label>Address:</label><input type="text" name="Address"></div>
+                <div class="form-group"><label>Contact Information:</label><input type="text" name="Contact_information"></div>
+                <div class="form-group"><label>Branch ID (Required):</label><input type="number" name="Branch_ID" required></div>
+                <button type="submit">Add Member</button>
+                <div class="status-message" id="member-status-message"></div>
+            </form>
+        </section>
+        
+        <section id="tab-branch" class="tab-content">
+            <h2>Add New Branch</h2>
+            <form id="add-branch-form">
+                <p>Note: Branch ID is auto-incremented or must be provided manually depending on your table setup.</p>
+                <div class="form-group"><label>Branch ID (If not auto-increment):</label><input type="number" name="Branch_ID"></div>
+                <div class="form-group"><label>Name (Required):</label><input type="text" name="Name" required></div>
+                <div class="form-group"><label>Location (Required):</label><input type="text" name="Location" required></div>
+                <button type="submit">Add Branch</button>
+                <div class="status-message" id="branch-status-message"></div>
+            </form>
+        </section>
+
+        <section id="tab-librarian" class="tab-content">
+            <h2>Add New Librarian</h2>
+            <form id="add-librarian-form">
+                <div class="form-group"><label>Name (Required):</label><input type="text" name="Name" required></div>
+                <div class="form-group"><label>Branch ID (Required):</label><input type="number" name="Branch_ID" required></div>
+                <button type="submit">Add Librarian</button>
+                <div class="status-message" id="librarian-status-message"></div>
+            </form>
+        </section>
+
+        <section id="tab-author" class="tab-content">
+            <h2>Add New Author</h2>
+            <form id="add-author-form">
+                <div class="form-group"><label>Name (Required):</label><input type="text" name="Name" required></div>
+                <button type="submit">Add Author</button>
+                <div class="status-message" id="author-status-message"></div>
+            </form>
+        </section>
+
+    </div>
+
+    <script src="script.js" defer></script> 
+</body>
+</html>
